@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/cultivo_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/cultivo_calabaza.svg" id="2"]
+
+[sub_resource type="AtlasTexture" id="Calabaza_etapa_1"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Calabaza_etapa_2"]
+atlas = ExtResource("2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Calabaza_etapa_3"]
+atlas = ExtResource("2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Calabaza_etapa_4"]
+atlas = ExtResource("2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Calabaza_icono"]
+atlas = ExtResource("2")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+script = ExtResource("1")
+nombre = "Calabaza"
+etapas = Array[Texture2D]([SubResource("Calabaza_etapa_1"), SubResource("Calabaza_etapa_2"), SubResource("Calabaza_etapa_3"), SubResource("Calabaza_etapa_4")])
+icono = SubResource("Calabaza_icono")

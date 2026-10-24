@@ -1,0 +1,654 @@
+[gd_scene format=4 uid="uid://do7bkwsqvim1f"]
+
+[ext_resource type="Script" uid="uid://br2rai16j1ean" path="res://scripts/menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bci2xcmtd5ke5" path="res://Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ol4hkusggirm" path="res://Sprout Lands - Sprites - Basic pack/Objects/Paths.png" id="3_v86rl"]
+[ext_resource type="Texture2D" uid="uid://b3ckr16pmhd6b" path="res://Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Big Play Button.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cuqyg1cty2rsv" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Plants.png" id="4_13sgg"]
+[ext_resource type="Texture2D" uid="uid://ceyeri2r5jcc4" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Grass Biom things 1.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bmdjo5x7q4ubr" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="5_70i5f"]
+[ext_resource type="Texture2D" uid="uid://dy5uey7qiqdqd" path="res://Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="5_i6lef"]
+[ext_resource type="Texture2D" uid="uid://dn3j8bhhlle00" path="res://Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="6_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://dy4kknns8bxhp" path="res://Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="7_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://cqggniulvmnpr" path="res://Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Actions.png" id="8_6cdou"]
+
+[sub_resource type="AtlasTexture" id="Menu_tree"]
+atlas = ExtResource("5")
+region = Rect2(48, 0, 32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13sgg"]
+texture = ExtResource("5_70i5f")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qbawg"]
+tile_size = Vector2i(6, 8)
+terrain_set_0/mode = 1
+sources/0 = SubResource("TileSetAtlasSource_13sgg")
+
+[sub_resource type="AtlasTexture" id="Menu_flower"]
+atlas = ExtResource("5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Settings_panel"]
+atlas = ExtResource("3")
+region = Rect2(137, 8, 111, 128)
+
+[sub_resource type="AtlasTexture" id="Button_normal"]
+atlas = ExtResource("4")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="Menu_button_normal"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+texture = SubResource("Button_normal")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="AtlasTexture" id="Button_hover"]
+atlas = ExtResource("4")
+region = Rect2(96, 0, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="Menu_button_hover"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+texture = SubResource("Button_hover")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i42df"]
+load_path = "res://.godot/imported/Fences.png-56759b1dede644b9211778dfdb3c424f.ctex"
+
+[node name="Menu" type="Control" unique_id=143404183]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=437787930]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.7386958, 0.8530016, 0.40057328, 1)
+
+[node name="ArbolMenuDerecho" type="Sprite2D" parent="." unique_id=170922999]
+texture_filter = 1
+position = Vector2(212, 144)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho6" type="Sprite2D" parent="." unique_id=1519340412]
+texture_filter = 1
+position = Vector2(60, 86)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho7" type="Sprite2D" parent="." unique_id=2037539053]
+z_index = 1
+texture_filter = 1
+position = Vector2(67, 284)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho8" type="Sprite2D" parent="." unique_id=1771629923]
+texture_filter = 1
+position = Vector2(944, 68)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho11" type="Sprite2D" parent="." unique_id=1773182116]
+texture_filter = 1
+position = Vector2(198, 277)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho12" type="Sprite2D" parent="." unique_id=475114611]
+texture_filter = 1
+position = Vector2(310, 209)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho2" type="Sprite2D" parent="." unique_id=1390159721]
+texture_filter = 1
+position = Vector2(308, 343)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho5" type="Sprite2D" parent="." unique_id=1466959017]
+texture_filter = 1
+position = Vector2(1202, 275)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho9" type="Sprite2D" parent="." unique_id=680039287]
+texture_filter = 1
+position = Vector2(1044, 21)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho13" type="Sprite2D" parent="." unique_id=111410933]
+texture_filter = 1
+position = Vector2(949, 238)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho14" type="Sprite2D" parent="." unique_id=2133170721]
+texture_filter = 1
+position = Vector2(1190, 40)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho15" type="Sprite2D" parent="." unique_id=1399534460]
+texture_filter = 1
+position = Vector2(965, 361)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho10" type="Sprite2D" parent="." unique_id=945810576]
+texture_filter = 1
+position = Vector2(1199, 370)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="ArbolMenuDerecho4" type="Sprite2D" parent="." unique_id=1088667414]
+texture_filter = 1
+position = Vector2(1168, 484)
+scale = Vector2(4, 4)
+texture = SubResource("Menu_tree")
+
+[node name="Camino" type="Sprite2D" parent="." unique_id=2106798984]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(1083.9999, 261.0001)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("3_v86rl")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 45)
+
+[node name="Camino2" type="Sprite2D" parent="." unique_id=1814151850]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(1079.0001, 393)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("3_v86rl")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 45)
+
+[node name="Camino3" type="Sprite2D" parent="." unique_id=1304251058]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(1093, 523)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("3_v86rl")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 45)
+
+[node name="Camino4" type="Sprite2D" parent="." unique_id=1826205581]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(1091, 656.00006)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("3_v86rl")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 45)
+
+[node name="ArbolMenuIzquierdo" type="Sprite2D" parent="." unique_id=803685404]
+top_level = true
+light_mask = 3
+position = Vector2(295, 33.000015)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(17, 1, 29, 30)
+
+[node name="ArbolMenuIzquierdo4" type="Sprite2D" parent="." unique_id=1205016903]
+top_level = true
+light_mask = 3
+position = Vector2(843.99994, 9.0000305)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(17, 1, 29, 30)
+
+[node name="ArbolMenuIzquierdo5" type="Sprite2D" parent="." unique_id=159385308]
+top_level = true
+light_mask = 3
+position = Vector2(1253, 143)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(17, 1, 29, 30)
+
+[node name="ArbolMenuIzquierdo3" type="Sprite2D" parent="." unique_id=92142088]
+top_level = true
+light_mask = 3
+position = Vector2(110.00001, 177)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(17, 1, 29, 30)
+
+[node name="ArbolMenuIzquierdo2" type="Sprite2D" parent="." unique_id=2016049046]
+top_level = true
+light_mask = 3
+position = Vector2(151, 42)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(17, 1, 29, 30)
+
+[node name="dosArbustos3" type="Sprite2D" parent="." unique_id=528438813]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(843.7186, 629.4016)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(0, 46, 35, 19)
+
+[node name="dosArbustos2" type="Sprite2D" parent="." unique_id=821120358]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(726.71875, 629.4016)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(0, 46, 35, 19)
+
+[node name="dosArbustos1" type="Sprite2D" parent="." unique_id=340214658]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(611.7187, 630.4016)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(0, 46, 35, 19)
+
+[node name="dosArbustos" type="Sprite2D" parent="." unique_id=1561159100]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(494.71872, 631.4017)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(0, 46, 35, 19)
+
+[node name="Maiz2" type="Sprite2D" parent="." unique_id=642685473]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(48, 478.00006)
+scale = Vector2(4.4687543, 3.9282544)
+texture = ExtResource("4_13sgg")
+region_enabled = true
+region_rect = Rect2(64, 0, 16, 17)
+
+[node name="Maiz" type="Sprite2D" parent="." unique_id=490812987]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(120, 482.00003)
+scale = Vector2(4.4687543, 3.9282544)
+texture = ExtResource("4_13sgg")
+region_enabled = true
+region_rect = Rect2(64, 0, 16, 17)
+
+[node name="Tronco" type="Sprite2D" parent="." unique_id=2076914271]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(1010, 639)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(64, 33, 16, 14)
+
+[node name="Tronco2" type="Sprite2D" parent="." unique_id=1428306624]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(1243, 465)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(64, 33, 16, 14)
+
+[node name="Tronco3" type="Sprite2D" parent="." unique_id=122905273]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(233.00012, 66.00006)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(64, 33, 16, 14)
+
+[node name="FlorRosa" type="Sprite2D" parent="." unique_id=1724269753]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(870.99994, 130.00006)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(111, 49, 16, 15)
+
+[node name="FlorRosa2" type="Sprite2D" parent="." unique_id=612517240]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(406.00003, 86.000015)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(111, 49, 16, 15)
+
+[node name="FlorRosa3" type="Sprite2D" parent="." unique_id=1431556997]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(817, 85)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(111, 49, 16, 15)
+
+[node name="Agua" type="TileMapLayer" parent="." unique_id=977082606]
+top_level = true
+light_mask = 3
+position = Vector2(1216.8751, 646.87494)
+scale = Vector2(11.265624, 5.2803087)
+tile_map_data = PackedByteArray("AADv/wEAAAADAAAAAADx/wEAAAADAAAAAADu/wEAAAADAAAAAADz/wEAAAADAAAAAAD2/wEAAAADAAAAAAD1/wEAAAADAAAAAAD4/wEAAAADAAAAAAD6/wEAAAADAAAAAAA=")
+tile_set = SubResource("TileSet_qbawg")
+
+[node name="arbustoIndividual" type="Sprite2D" parent="." unique_id=227184002]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(402.00003, 637.00006)
+scale = Vector2(3.8124986, 3.469707)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(16, 46, 16, 20)
+
+[node name="FlorAma" type="Sprite2D" parent="." unique_id=486718308]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(458.00003, 79.00001)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(110, 32, 18, 15)
+
+[node name="FlorAma2" type="Sprite2D" parent="." unique_id=1358714680]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(404, 121)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(110, 32, 18, 15)
+
+[node name="FlorAma1" type="Sprite2D" parent="." unique_id=1570675298]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(872.34375, 84.92042)
+scale = Vector2(3.850693, 3.6106112)
+texture = ExtResource("5")
+region_enabled = true
+region_rect = Rect2(110, 32, 18, 15)
+
+[node name="Tomate" type="Sprite2D" parent="." unique_id=647306231]
+top_level = true
+light_mask = 3
+position = Vector2(46.000015, 543)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("4_13sgg")
+region_enabled = true
+region_rect = Rect2(64, 16, 16, 16)
+
+[node name="Tomate2" type="Sprite2D" parent="." unique_id=1387476722]
+top_level = true
+light_mask = 3
+position = Vector2(122.99999, 538)
+scale = Vector2(3.8124986, 3.6212234)
+texture = ExtResource("4_13sgg")
+region_enabled = true
+region_rect = Rect2(64, 16, 16, 16)
+
+[node name="Pollo" type="Sprite2D" parent="." unique_id=1473641419]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(1182, 633)
+scale = Vector2(3.8124986, 3.6212223)
+texture = ExtResource("6_mj5lg")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(-1, -1, 15, 18)
+
+[node name="Pollo2" type="Sprite2D" parent="." unique_id=1809903353]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(135, 392.00006)
+scale = Vector2(3.8124986, 3.6212223)
+texture = ExtResource("6_mj5lg")
+region_enabled = true
+region_rect = Rect2(-1, -1, 15, 18)
+
+[node name="Vaca" type="Sprite2D" parent="." unique_id=1871664712]
+top_level = true
+light_mask = 3
+z_index = 1
+position = Vector2(997.99994, 562)
+scale = Vector2(3.8124986, 3.28789)
+texture = ExtResource("7_ufwb2")
+region_enabled = true
+region_rect = Rect2(33, 33, 33, 33)
+
+[node name="personaje" type="Sprite2D" parent="." unique_id=1867284153]
+top_level = true
+light_mask = 3
+position = Vector2(200.00002, 466)
+scale = Vector2(3.8124986, 3.469707)
+texture = ExtResource("8_6cdou")
+region_enabled = true
+region_rect = Rect2(0, 92, 47, 50)
+
+[node name="FloresMenuIzquierda" type="Sprite2D" parent="." unique_id=1410467694]
+texture_filter = 1
+position = Vector2(1010.99994, 165)
+scale = Vector2(5.0625, 5.0625)
+texture = SubResource("Menu_flower")
+flip_h = true
+
+[node name="Casas" type="Sprite2D" parent="." unique_id=1281931801]
+position = Vector2(1085, 99)
+scale = Vector2(3.4166667, 3.2083333)
+texture = ExtResource("5_i6lef")
+
+[node name="FloresMenuDerecha" type="Sprite2D" parent="." unique_id=526104609]
+texture_filter = 1
+position = Vector2(1162, 167)
+scale = Vector2(5.312502, 4.8125)
+texture = SubResource("Menu_flower")
+
+[node name="PanelMenu" type="NinePatchRect" parent="." unique_id=1201361282]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -280.0
+offset_right = 240.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("Settings_panel")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Centro" type="CenterContainer" parent="." unique_id=102813462]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pila" type="VBoxContainer" parent="Centro" unique_id=332275039]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Logo" type="TextureRect" parent="Centro/Pila" unique_id=420052699]
+layout_mode = 2
+size_flags_horizontal = 4
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="Centro/Pila" unique_id=343243771]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 70
+text = "GRANJA"
+horizontal_alignment = 1
+
+[node name="MenuPrincipal" type="VBoxContainer" parent="Centro/Pila" unique_id=1823979976]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="BotonJugar" type="Button" parent="Centro/Pila/MenuPrincipal" unique_id=1736636598]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("Menu_button_normal")
+theme_override_styles/pressed = SubResource("Menu_button_normal")
+theme_override_styles/hover = SubResource("Menu_button_hover")
+text = "Jugar"
+
+[node name="BotonConfig" type="Button" parent="Centro/Pila/MenuPrincipal" unique_id=904242923]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("Menu_button_normal")
+theme_override_styles/pressed = SubResource("Menu_button_normal")
+theme_override_styles/hover = SubResource("Menu_button_hover")
+text = "Configuracion"
+
+[node name="BotonSalir" type="Button" parent="Centro/Pila/MenuPrincipal" unique_id=1131337099]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("Menu_button_normal")
+theme_override_styles/pressed = SubResource("Menu_button_normal")
+theme_override_styles/hover = SubResource("Menu_button_hover")
+text = "Salir"
+
+[node name="Configuracion" type="VBoxContainer" parent="Centro/Pila" unique_id=619838642]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="TituloConfig" type="Label" parent="Centro/Pila/Configuracion" unique_id=1258481360]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Configuracion"
+horizontal_alignment = 1
+
+[node name="VolumenLabel" type="Label" parent="Centro/Pila/Configuracion" unique_id=542060688]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Volumen: 80%"
+horizontal_alignment = 1
+
+[node name="VolumenSlider" type="HSlider" parent="Centro/Pila/Configuracion" unique_id=24179964]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 30)
+layout_mode = 2
+value = 80.0
+
+[node name="BotonVolver" type="Button" parent="Centro/Pila/Configuracion" unique_id=2092320017]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("Menu_button_normal")
+theme_override_styles/pressed = SubResource("Menu_button_normal")
+theme_override_styles/hover = SubResource("Menu_button_hover")
+text = "Volver"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1167143190]
+position = Vector2(97, 648)
+scale = Vector2(3.3617022, 4.444443)
+texture = SubResource("CompressedTexture2D_i42df")
+region_enabled = true
+region_rect = Rect2(17, 46, 47, 18)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=650009823]
+position = Vector2(205.00002, 646)
+scale = Vector2(3.3617022, 4.444443)
+texture = SubResource("CompressedTexture2D_i42df")
+region_enabled = true
+region_rect = Rect2(17, 46, 47, 18)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2143637078]
+position = Vector2(313.00003, 644)
+scale = Vector2(3.3617022, 4.444443)
+texture = SubResource("CompressedTexture2D_i42df")
+region_enabled = true
+region_rect = Rect2(17, 46, 47, 18)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1601716887]
+position = Vector2(-11.9999695, 649)
+scale = Vector2(3.3617022, 4.444443)
+texture = SubResource("CompressedTexture2D_i42df")
+region_enabled = true
+region_rect = Rect2(17, 46, 47, 18)

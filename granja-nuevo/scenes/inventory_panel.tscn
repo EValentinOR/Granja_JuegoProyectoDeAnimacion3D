@@ -1,0 +1,432 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/inventory_panel.gd" id="1"]
+[ext_resource type="Texture2D" path="res://Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" id="2"]
+[ext_resource type="Texture2D" path="res://Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Big Play Button.png" id="3"]
+
+[sub_resource type="AtlasTexture" id="Settings_panel"]
+atlas = ExtResource("2")
+region = Rect2(137, 8, 111, 128)
+
+[sub_resource type="AtlasTexture" id="Inventory_button_normal"]
+atlas = ExtResource("3")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="Inventory_slot"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+texture = SubResource("Inventory_button_normal")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[node name="Mochila" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="FondoOscuro" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.62)
+
+[node name="PanelMochila" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 85.0
+offset_right = 990.0
+offset_bottom = 635.0
+texture = SubResource("Settings_panel")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Contenido" type="VBoxContainer" parent="PanelMochila"]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.06
+anchor_top = 0.05
+anchor_right = 0.94
+anchor_bottom = 0.95
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_constants/separation = 12
+
+[node name="Encabezado" type="HBoxContainer" parent="PanelMochila/Contenido"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="PanelMochila/Contenido/Encabezado"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.2, 0.13, 0.07, 1)
+theme_override_font_sizes/font_size = 28
+text = "MOCHILA"
+
+[node name="BotonCerrar" type="Button" parent="PanelMochila/Contenido/Encabezado"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "CERRAR [B]"
+
+[node name="Ayuda" type="Label" parent="PanelMochila/Contenido"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.13, 0.07, 1)
+text = "Cosechas y productos del corral · Esc o B para cerrar"
+
+[node name="CeldasInventario" type="GridContainer" parent="PanelMochila/Contenido"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="EspacioProducto00" type="PanelContainer" parent="PanelMochila/Contenido/CeldasInventario"]
+custom_minimum_size = Vector2(300, 105)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="HBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila"]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="VBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto01" type="PanelContainer" parent="PanelMochila/Contenido/CeldasInventario"]
+custom_minimum_size = Vector2(300, 105)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="HBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila"]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="VBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto02" type="PanelContainer" parent="PanelMochila/Contenido/CeldasInventario"]
+custom_minimum_size = Vector2(300, 105)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="HBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila"]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="VBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto03" type="PanelContainer" parent="PanelMochila/Contenido/CeldasInventario"]
+custom_minimum_size = Vector2(300, 105)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="HBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila"]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="VBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto04" type="PanelContainer" parent="PanelMochila/Contenido/CeldasInventario"]
+custom_minimum_size = Vector2(300, 105)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="HBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila"]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="VBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto05" type="PanelContainer" parent="PanelMochila/Contenido/CeldasInventario"]
+custom_minimum_size = Vector2(300, 105)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="HBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila"]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="VBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto06" type="PanelContainer" parent="PanelMochila/Contenido/CeldasInventario"]
+custom_minimum_size = Vector2(300, 105)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="HBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila"]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila/IconSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="VBoxContainer" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.10, 1)
+theme_override_font_sizes/font_size = 18

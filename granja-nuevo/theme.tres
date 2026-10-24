@@ -1,0 +1,75 @@
+[gd_resource type="Theme" format=3 uid="uid://cb4abckenshwc"]
+
+[ext_resource type="Texture2D" uid="uid://bndww36jqr851" path="res://Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/buttons/Square Buttons 26x19.png" id="2_square_buttons"]
+[ext_resource type="FontFile" uid="uid://mlcoloaa0h8m" path="res://Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="3_pixel_font"]
+
+[sub_resource type="AtlasTexture" id="Button_disabled"]
+atlas = ExtResource("2_square_buttons")
+region = Rect2(10, 103, 26, 19)
+
+[sub_resource type="StyleBoxTexture" id="Style_disabled"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+texture = SubResource("Button_disabled")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="Button_hover"]
+atlas = ExtResource("2_square_buttons")
+region = Rect2(58, 39, 26, 19)
+
+[sub_resource type="StyleBoxTexture" id="Style_hover"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+texture = SubResource("Button_hover")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="Button_normal"]
+atlas = ExtResource("2_square_buttons")
+region = Rect2(10, 39, 26, 19)
+
+[sub_resource type="StyleBoxTexture" id="Style_normal"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+texture = SubResource("Button_normal")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="Button_pressed"]
+atlas = ExtResource("2_square_buttons")
+region = Rect2(58, 71, 26, 19)
+
+[sub_resource type="StyleBoxTexture" id="Style_pressed"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+texture = SubResource("Button_pressed")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[resource]
+default_font = ExtResource("3_pixel_font")
+Button/colors/font_color = Color(0.22, 0.16, 0.1, 1)
+Button/colors/font_disabled_color = Color(0.22, 0.16, 0.1, 1)
+Button/colors/font_hover_color = Color(0.22, 0.16, 0.1, 1)
+Button/colors/font_pressed_color = Color(0.22, 0.16, 0.1, 1)
+Button/styles/disabled = SubResource("Style_disabled")
+Button/styles/hover = SubResource("Style_hover")
+Button/styles/normal = SubResource("Style_normal")
+Button/styles/pressed = SubResource("Style_pressed")
