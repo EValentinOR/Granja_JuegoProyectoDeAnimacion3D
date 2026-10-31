@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/plot.gd" id="1"]
+[ext_resource type="Texture2D" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide_v2.png" id="2"]
+
+[sub_resource type="AtlasTexture" id="TilledPlot"]
+atlas = ExtResource("2")
+region = Rect2(0, 80, 48, 32)
+
+[node name="Parcela" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Suelo" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -40
+offset_top = -40
+offset_right = 40
+offset_bottom = 40
+texture_filter = 1
+texture = SubResource("TilledPlot")
+stretch_mode = 1
+
+[node name="PlantaColor" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -15
+offset_top = -15
+offset_right = 15
+offset_bottom = 15
+visible = false
+color = Color(0.3, 0.75, 0.25, 1.0)
+
+[node name="Planta" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -4)
+scale = Vector2(3, 3)
+
+[node name="Barra" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -34
+offset_top = 28
+offset_right = 34
+offset_bottom = 36
+visible = false
+show_percentage = false
+
+[node name="Resalte" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -44
+offset_top = -44
+offset_right = 44
+offset_bottom = 44
+visible = false
+border_color = Color(1, 1, 0, 1.0)
+border_width = 3.0
+editor_only = false
+
+[node name="Bloqueo" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -40
+offset_top = -40
+offset_right = 40
+offset_bottom = 40
+visible = false
+mouse_filter = 2
+
+[node name="Sombra" type="ColorRect" parent="Bloqueo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.12, 0.14, 0.16, 0.58)
+
+[node name="PrecioBloqueo" type="Label" parent="Bloqueo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.38, 1)
+theme_override_font_sizes/font_size = 14
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1

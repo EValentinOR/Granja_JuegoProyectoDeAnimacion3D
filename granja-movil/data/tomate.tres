@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/cultivo_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Plants.png" id="2"]
+
+[sub_resource type="AtlasTexture" id="Tomate_etapa_1"]
+atlas = ExtResource("2")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Tomate_etapa_2"]
+atlas = ExtResource("2")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Tomate_etapa_3"]
+atlas = ExtResource("2")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Tomate_etapa_4"]
+atlas = ExtResource("2")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="Tomate_icono"]
+atlas = ExtResource("2")
+region = Rect2(64, 16, 16, 16)
+
+[resource]
+script = ExtResource("1")
+nombre = "Tomate"
+etapas = Array[Texture2D]([SubResource("Tomate_etapa_1"), SubResource("Tomate_etapa_2"), SubResource("Tomate_etapa_3"), SubResource("Tomate_etapa_4")])
+icono = SubResource("Tomate_icono")

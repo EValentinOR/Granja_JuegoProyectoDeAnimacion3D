@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://co77hctu8hyy"]
+
+[ext_resource type="Script" uid="uid://cfk6778hqy1u0" path="res://scripts/animal.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dn3j8bhhlle00" path="res://Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="2"]
+
+[sub_resource type="CircleShape2D" id="Collision_chicken"]
+radius = 8.0
+
+[node name="Pollo" type="Node2D" unique_id=1775424326]
+script = ExtResource("1")
+velocidad = 80.0
+animacion_fps = 8.0
+radio_colision = 10.0
+
+[node name="ColisionAnimal" type="AnimatableBody2D" parent="." unique_id=1950804701]
+
+[node name="Hitbox" type="CollisionShape2D" parent="ColisionAnimal" unique_id=2063210551]
+shape = SubResource("Collision_chicken")
+
+[node name="Placeholder" type="Node2D" parent="." unique_id=1475979656]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=474388411]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2")
+hframes = 4
+vframes = 2

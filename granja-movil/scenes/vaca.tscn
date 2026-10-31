@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/animal.gd" id="1"]
+[ext_resource type="Texture2D" path="res://Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2"]
+
+[sub_resource type="CircleShape2D" id="Collision_cow"]
+radius = 18.0
+
+[node name="Vaca" type="Node2D"]
+script = ExtResource("1")
+velocidad = 45.0
+animacion_fps = 6.0
+radio_colision = 24.0
+
+[node name="ColisionAnimal" type="AnimatableBody2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="ColisionAnimal"]
+shape = SubResource("Collision_cow")
+
+[node name="Placeholder" type="Node2D" parent="."]
+
+[node name="Cuerpo" type="ColorRect" parent="Placeholder"]
+layout_mode = 0
+offset_left = -30
+offset_top = -16
+offset_right = 30
+offset_bottom = 16
+color = Color(1, 1, 1, 1.0)
+
+[node name="Mancha1" type="ColorRect" parent="Placeholder"]
+layout_mode = 0
+offset_left = -22
+offset_top = -10
+offset_right = -8
+offset_bottom = 2
+color = Color(0, 0, 0, 1.0)
+
+[node name="Mancha2" type="ColorRect" parent="Placeholder"]
+layout_mode = 0
+offset_left = 4
+offset_top = 0
+offset_right = 20
+offset_bottom = 12
+color = Color(0, 0, 0, 1.0)
+
+[node name="Cabeza" type="ColorRect" parent="Placeholder"]
+layout_mode = 0
+offset_left = 30
+offset_top = -20
+offset_right = 50
+offset_bottom = 2
+color = Color(0.95, 0.95, 0.95, 1.0)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+hframes = 3
+vframes = 2
+texture_filter = 1
+texture = ExtResource("2")

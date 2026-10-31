@@ -1,0 +1,4 @@
+project_id = "granja-sin-base"
+
+[functions.game-saves]
+verify_jwt = true

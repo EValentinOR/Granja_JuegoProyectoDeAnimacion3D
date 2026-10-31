@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cof7uosgaju51"]
+
+[ext_resource type="Script" uid="uid://dti355mb2q1t7" path="res://scripts/player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://q72irdpwqlt" path="res://Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_g2els"]
+
+[sub_resource type="CircleShape2D" id="CircleShape_player"]
+radius = 12.0
+
+[node name="Jugador" type="CharacterBody2D" unique_id=379737650]
+script = ExtResource("1")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1197651388]
+unique_name_in_owner = true
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_g2els")
+hframes = 4
+vframes = 4
+frame = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape_player")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+offset = Vector2(0, 0)
+limit_left = -180
+limit_top = -120
+limit_right = 3760
+limit_bottom = 1560

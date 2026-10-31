@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3]
+
+[sub_resource type="StyleBoxFlat" id="SellPanel"]
+bg_color = Color(0.847059, 0.737255, 0.541176, 1)
+border_color = Color(0.462745, 0.333333, 0.2, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+
+[node name="FondoMenuVender" type="PanelContainer"]
+custom_minimum_size = Vector2(700, 286)
+theme_override_styles/panel = SubResource("SellPanel")
+
+[node name="MenuVenderSeleccion" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Scroll" type="ScrollContainer" parent="MenuVenderSeleccion"]
+custom_minimum_size = Vector2(660, 218)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ListaVenta" type="GridContainer" parent="MenuVenderSeleccion/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+
+[node name="BotonVenderSeleccionados" type="Button" parent="MenuVenderSeleccion/Scroll/ListaVenta"]
+custom_minimum_size = Vector2(320, 50)
+layout_mode = 2
+text = "VENDER"
+
+[node name="Acciones" type="HBoxContainer" parent="MenuVenderSeleccion"]
+layout_mode = 2
+alignment = 2
+theme_override_constants/separation = 8
+
+[node name="BotonVolver" type="Button" parent="MenuVenderSeleccion/Acciones"]
+custom_minimum_size = Vector2(180, 42)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 0
+text = "Volver (Esc)"

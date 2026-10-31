@@ -1,0 +1,692 @@
+[gd_scene format=3 uid="uid://clixrdrcvk4fc"]
+
+[ext_resource type="Script" uid="uid://p2s8lpbh2qtt" path="res://scripts/inventory_panel.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bci2xcmtd5ke5" path="res://Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b3ckr16pmhd6b" path="res://Sprout Lands - UI Pack - Basic pack/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Big Play Button.png" id="3"]
+
+[sub_resource type="AtlasTexture" id="Settings_panel"]
+atlas = ExtResource("2")
+region = Rect2(137, 8, 111, 128)
+
+[sub_resource type="AtlasTexture" id="Inventory_button_normal"]
+atlas = ExtResource("3")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="Inventory_slot"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+texture = SubResource("Inventory_button_normal")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[node name="Mochila" type="Control" unique_id=1080806905]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="FondoOscuro" type="ColorRect" parent="." unique_id=2056010653]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.62)
+
+[node name="PanelMochila" type="NinePatchRect" parent="." unique_id=1932542041]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 99.0
+offset_right = 1005.0
+offset_bottom = 649.0
+texture = SubResource("Settings_panel")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Contenido" type="Control" parent="PanelMochila" unique_id=1347061073]
+layout_mode = 1
+anchor_left = 0.06
+anchor_top = 0.05
+anchor_right = 0.94
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Encabezado" type="Control" parent="PanelMochila/Contenido" unique_id=1833283725]
+anchors_preset = 0
+offset_right = 616.0
+offset_bottom = 48.0
+
+[node name="Titulo" type="Label" parent="PanelMochila/Contenido/Encabezado" unique_id=1937954993]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 44.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.2, 0.13, 0.07, 1)
+theme_override_font_sizes/font_size = 28
+text = "MOCHILA"
+
+[node name="BotonCerrar" type="Button" parent="PanelMochila/Contenido/Encabezado" unique_id=1278814799]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 0
+offset_left = 447.0
+offset_top = -1.5
+offset_right = 597.0
+offset_bottom = 42.5
+theme_override_font_sizes/font_size = 14
+text = "CERRAR [B]"
+
+[node name="Ayuda" type="Label" parent="PanelMochila/Contenido" unique_id=411375601]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -3.0
+offset_top = 46.5
+offset_right = 613.0
+offset_bottom = 74.5
+theme_override_colors/font_color = Color(0.2, 0.13, 0.07, 1)
+text = "Productos del corral y cosechas · Esc o B cierra"
+
+[node name="CeldasInventario" type="Control" parent="PanelMochila/Contenido" unique_id=136020028]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 274.0
+offset_top = 70.5
+offset_right = 606.0
+offset_bottom = 494.5
+size_flags_vertical = 3
+
+[node name="EspacioProducto00" type="Panel" parent="PanelMochila/Contenido/CeldasInventario" unique_id=1838590952]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 17.5
+offset_right = 314.0
+offset_bottom = 69.5
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00" unique_id=419987748]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 49.0
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila" unique_id=800827223]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila/IconSlot" unique_id=1833751899]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.5
+offset_right = -6.0
+offset_bottom = -5.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila/IconSlot" unique_id=339385826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila" unique_id=1382403993]
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 11.5
+offset_right = 261.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila/Texto" unique_id=1288730843]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 3.0
+offset_right = 219.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto00/Fila/Texto" unique_id=299723881]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 6.0
+offset_right = 266.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto01" type="Panel" parent="PanelMochila/Contenido/CeldasInventario" unique_id=786881668]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 74.5
+offset_right = 315.0
+offset_bottom = 126.5
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01" unique_id=1548294439]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 49.0
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila" unique_id=853010531]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila/IconSlot" unique_id=1683957830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 7.5
+offset_right = -7.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila/IconSlot" unique_id=852429105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila" unique_id=959590228]
+anchors_preset = 0
+offset_left = 56.0
+offset_right = 280.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila/Texto" unique_id=175151669]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 13.5
+offset_right = 216.0
+offset_bottom = 36.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto01/Fila/Texto" unique_id=2006634276]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 19.5
+offset_right = 266.0
+offset_bottom = 43.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto02" type="Panel" parent="PanelMochila/Contenido/CeldasInventario" unique_id=456961152]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 131.5
+offset_right = 316.0
+offset_bottom = 183.5
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02" unique_id=845673725]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 49.0
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila" unique_id=1967917511]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila/IconSlot" unique_id=1332501115]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 10.5
+offset_right = -9.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila/IconSlot" unique_id=1850134252]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila" unique_id=1131334715]
+anchors_preset = 0
+offset_left = 56.0
+offset_right = 280.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila/Texto" unique_id=103071642]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 11.5
+offset_right = 216.0
+offset_bottom = 34.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto02/Fila/Texto" unique_id=603338206]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 20.5
+offset_right = 268.0
+offset_bottom = 44.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto03" type="Panel" parent="PanelMochila/Contenido/CeldasInventario" unique_id=1176305122]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 190.5
+offset_right = 315.0
+offset_bottom = 242.5
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03" unique_id=532430100]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 49.0
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila" unique_id=1774804707]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila/IconSlot" unique_id=1534644827]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 4.5
+offset_right = -4.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila/IconSlot" unique_id=826580887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila" unique_id=131321047]
+anchors_preset = 0
+offset_left = 56.0
+offset_right = 280.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila/Texto" unique_id=841966941]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 7.5
+offset_right = 216.0
+offset_bottom = 30.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto03/Fila/Texto" unique_id=1872177858]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 20.5
+offset_right = 270.0
+offset_bottom = 44.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto04" type="Panel" parent="PanelMochila/Contenido/CeldasInventario" unique_id=1174872296]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 249.5
+offset_right = 315.0
+offset_bottom = 301.5
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04" unique_id=1499838726]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 49.0
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila" unique_id=146030207]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila/IconSlot" unique_id=1285382591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 9.5
+offset_right = -8.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila/IconSlot" unique_id=1878849895]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila" unique_id=591852502]
+anchors_preset = 0
+offset_left = 56.0
+offset_right = 280.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila/Texto" unique_id=1450446811]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 7.5
+offset_right = 216.0
+offset_bottom = 30.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto04/Fila/Texto" unique_id=2121635669]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 20.5
+offset_right = 270.0
+offset_bottom = 44.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto05" type="Panel" parent="PanelMochila/Contenido/CeldasInventario" unique_id=574813099]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 306.5
+offset_right = 314.0
+offset_bottom = 358.5
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05" unique_id=795001778]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 49.0
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila" unique_id=1405514397]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila/IconSlot" unique_id=198205254]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 7.5
+offset_right = -10.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila/IconSlot" unique_id=2005806844]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila" unique_id=320885432]
+anchors_preset = 0
+offset_left = 56.0
+offset_right = 280.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila/Texto" unique_id=319030907]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.5
+offset_right = 219.0
+offset_bottom = 29.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto05/Fila/Texto" unique_id=784244537]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 20.5
+offset_right = 273.0
+offset_bottom = 44.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="EspacioProducto06" type="Panel" parent="PanelMochila/Contenido/CeldasInventario" unique_id=1566842643]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 363.5
+offset_right = 314.0
+offset_bottom = 415.5
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="Fila" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06" unique_id=1063345091]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 292.0
+offset_bottom = 49.0
+
+[node name="IconSlot" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila" unique_id=1062336977]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+
+[node name="IconoProducto" type="TextureRect" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila/IconSlot" unique_id=1288825455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 9.5
+offset_right = -8.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PuntoParaAsset" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila/IconSlot" unique_id=1111086154]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.74, 0.65)
+theme_override_font_sizes/font_size = 10
+text = "ASSET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="Control" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila" unique_id=2034809568]
+anchors_preset = 0
+offset_left = 56.0
+offset_right = 280.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="NombreProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila/Texto" unique_id=1681357813]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 9.5
+offset_right = 219.0
+offset_bottom = 32.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 13
+autowrap_mode = 3
+
+[node name="CantidadProducto" type="Label" parent="PanelMochila/Contenido/CeldasInventario/EspacioProducto06/Fila/Texto" unique_id=1835990256]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 18.5
+offset_right = 273.0
+offset_bottom = 42.5
+theme_override_colors/font_color = Color(0.22, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="PanelMisionesTab" type="Panel" parent="." unique_id=987753612]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 340.0
+offset_top = 216.0
+offset_right = 624.0
+offset_bottom = 637.0
+theme_override_styles/panel = SubResource("Inventory_slot")
+
+[node name="TextoMisionesTab" type="RichTextLabel" parent="PanelMisionesTab" unique_id=1102784496]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.05
+anchor_right = 0.94
+anchor_bottom = 0.95
+offset_left = -0.040008545
+offset_top = 77.95
+offset_right = -0.040008545
+offset_bottom = -4.9499817
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.2, 0.13, 0.07, 1)
+theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 18
+text = "Compra un terreno y construye una casa para comenzar con las misiones "
+
+[node name="TituloMisiones" type="RichTextLabel" parent="PanelMisionesTab" unique_id=208072513]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.05
+anchor_right = 0.94
+anchor_bottom = 0.95
+offset_left = 1.9599915
+offset_top = -9.050001
+offset_right = 1.9599915
+offset_bottom = -304.94998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.2, 0.13, 0.07, 1)
+theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 18
+text = "- Misiones -
+
+Ayuda a tus vecinos con lo que necesitan"

@@ -1,0 +1,37 @@
+[gd_scene load_steps=1 format=3]
+
+[node name="FilaProductoVenta" type="HBoxContainer"]
+custom_minimum_size = Vector2(320, 50)
+theme_override_constants/separation = 8
+
+[node name="Icono" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Etiqueta" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.2, 0.145, 0.09, 1)
+
+[node name="BotonDisminuir" type="Button" parent="."]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+focus_mode = 0
+tooltip_text = "Disminuir cantidad; desde cero selecciona todo"
+text = "▼"
+
+[node name="Cantidad" type="Label" parent="."]
+custom_minimum_size = Vector2(32, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.145, 0.09, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonAumentar" type="Button" parent="."]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+focus_mode = 0
+tooltip_text = "Aumentar cantidad; desde el maximo vuelve a cero"
+text = "▲"
