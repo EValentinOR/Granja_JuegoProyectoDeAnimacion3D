@@ -1,4 +1,4 @@
-# Granja (Godot 4)
+# Granja
 
 Abre `project.godot` con Godot 4.x y presiona F5.
 
