@@ -2,7 +2,7 @@
 
 Abre `project.godot` con Godot 4.x y presiona F5.
 
-Controles: WASD / flechas = mover, E o Espacio = interactuar, 1-8 = elegir semilla, Esc = volver al menú.
+Controles: WASD / flechas = mover, E o Espacio = interactuar, 1-5 = elegir semilla, Esc = volver al menú.
 
 ## Escenas (todo son nodos editables)
 - `scenes/menu.tscn`: Fondo, título, botones Jugar / Configuración / Salir y el slider de volumen.
